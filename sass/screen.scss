@@ -1,0 +1,392 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+// ----
+// Sass (v3.3.6)
+// Compass (v)
+// Susy (v)
+// ----
+
+@import "compass/reset";
+@import "sass/susy";
+@import "normalize";
+@import "compass";
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/css3/user-interface";
+@import "modal";
+@import "corusel";
+@include font-face("GreatVibes", font-files("../fonts/9151.ttf"));
+
+// Susy custom settings
+$susy:(
+	math: fluid,
+	use-custom: (rem: true)
+);
+
+a {
+	text-decoration: none;
+}
+.container{
+  background-color: #fff;
+  @include container;
+  @include clearfix;
+  .column_1,
+  .column_2,
+  .column_3{
+	@include span(full);
+  }
+  .column_0 {
+  	@include span(full);
+  	height: 29px;
+  	.column_0_1,
+  	.column_0_3 {
+		@include span(4.5 of 12);
+  	}
+  	.column_0_1 {
+  		margin-top: 14px;
+  		img {
+  			float: right;
+  			margin-left: -6px;
+  		}
+  	}
+  	.column_0_2 {
+		@include span(3 of 12);
+  	}
+  	.column_0_3 {
+  		margin-top: 14px;
+  		@include last;
+  		img {
+  			float: left;
+   			margin-right: -4px;
+	  		-moz-transform: rotate(-180deg); /* Для Firefox */
+			-ms-transform: rotate(-180deg); /* Для IE */
+			-webkit-transform: rotate(-180deg); /* Для Safari, Chrome, iOS */
+			-o-transform: rotate(-180deg); /* Для Opera */
+			transform: rotate(-180deg);
+		}
+  	}
+  }
+  .column_1 {
+  	background: {
+      image: image-url("../images/backgroundTop.png");
+      repeat: no-repeat;
+      position: center;
+    };
+  	height: 512px;
+  	.column_1_1,
+	.column_1_3 {
+		@include span(2 of 10);
+		height: 100%;
+	}
+		.leftMenu {
+			nav {
+				float: right;
+				padding-top: 33px;
+			}
+		}
+		.leftMenu,
+		.rightMenu {
+			@include clearfix;
+			font-family: "GreatVibes";
+			@include span(4.5 of 12);
+		}
+		.logo {
+			margin-top: -29px;
+			@include span(3 of 12);
+			text-align: center;
+			@include clearfix;
+			form {
+				padding-top: 25px;
+				z-index: 2;
+    			position: relative;
+			}
+			.fa-search {
+				line-height: 21px;
+				width: 48px;
+				height: 22px;
+				color: #a0d4da;
+			    margin-top: -37px;
+			    z-index: 10;
+			    position: absolute;
+			    margin-left: 70px;
+			}
+			.fa-search:hover {
+				color: #fff;
+				cursor: pointer;
+				background: url(../images/activesearch.png);
+			}
+			input {
+				text-indent: 30px;
+				outline: none;
+			    border-right: 0;
+			    border-width: 18px;
+			    border-left: 0;
+			    width: 280px;
+			    height: 14px;
+			    -webkit-border-image: url(../images/border.png) 18 0;
+				-moz-border-image: url(../images/border.png) 18 0;
+				-o-border-image: url(../images/border.png) 18 0;
+			    border-image: url(../images/border.png) 18 0;
+			}
+			input[type="search"] {
+				color: #a0d4da;
+			  @include input-placeholder {
+			    color: #a0d4da;
+			  }
+			}
+		}
+		.rightMenu {
+			padding-top: 33px;
+			@include clearfix;
+			@include last;
+			li {
+				float: left;
+				a {
+					color: #535353;
+					font-family: OpenSans;
+					font-size: 18px
+				}
+				img {
+					padding-top: 10px;
+				}
+			}
+			.aboutUs {
+				width: 50px;
+			}
+			.delivery {
+				padding-left: 40px;
+				padding-right: 40px;
+				width: 60px;
+			}
+			.basket {
+				width: 150px;
+			}
+		}
+	.column_1_2 {
+		height: 100%;
+		@include span(full);
+    }
+  }
+  .column_2{
+  	font-family: "GreatVibes";
+	background: {
+      image: image-url("../images/leftpicture.png"), image-url("../images/rightpicture.png");
+      repeat: no-repeat;
+      position: left,right;
+      color: #0db3c0;
+    };
+  	height:352px;
+    @include last;
+    margin-top: -28px;
+    .column_2_1,
+    .column_2_3, {
+    	@include span(3 of 12);
+    	height: 100%;
+    }
+    .column_2_1 {
+    }
+    .column_2_2 {
+    	width: 965px;
+    	margin: 0 auto;
+    	text-align: center;
+    }
+    .column_2_3 {
+    	@include last;
+    }
+  }
+    .new {
+		font-family: "GreatVibes";
+    	margin-top: -25px;
+    	color: #fff;
+		font-size: 35px;
+    }
+  .phone {
+  	text-align: center;
+  	overflow: hidden;
+  	float: right;
+  	line-height: 30px;
+  	width: 182px;
+  	height: 32px;
+  	background: #ffe8f1;
+  	.number {
+  		color: #ca3f72;
+  		font-size: 15px;
+  		font-family: PTSans, sans-serif;
+  	}
+  	.phoneIcon {
+  		float: right;
+	    width: 33px;
+	    height: 33px;
+	    border: 3px solid #fff;
+	    @include border-radius(20px);
+	    margin-right: -11px;
+	    margin-top: -4px;
+  	}
+  	i {
+  		color: #fff;
+	    margin-top: 2px;
+	    margin-left: -3px;
+  		font-size: 25px;
+  	} 
+  }
+  	.feedback {
+  		text-align: center;
+	  	overflow: hidden;
+	  	float: left;
+	  	line-height: 30px;
+	  	width: 182px;
+	  	height: 32px;
+	  	background: #ffe8f1;
+	  	.feedbackIcon {
+	  		float: left;
+		    width: 32px;
+		    height: 32px;
+		    border: 3px solid #fff;
+		    @include border-radius(25px);
+		    margin-top: -3px;
+		    margin-left: -5px;
+	  	}
+	  	.feedbackText {
+	  		float: left;
+	  		width: 125px;
+	  		font-family: PTSans, sans-serif;
+	  		a {
+		  		color: #ca3f72;
+		  		font-size: 15px;
+	  		}
+	  		a:hover {
+	  			color: #ca3f72;
+	  		}
+	  	}
+	  	i {
+	  		color: #fff;
+		    margin-top: 2px;
+		    margin-left: -3px;
+	  		font-size: 25px;
+	  	}  
+  	}
+  .fa-phone {
+  	-moz-transform: rotate(-90deg); /* Для Firefox */
+	-ms-transform: rotate(-90deg); /* Для IE */
+	-webkit-transform: rotate(-90deg); /* Для Safari, Chrome, iOS */
+	-o-transform: rotate(-90deg); /* Для Opera */
+	transform: rotate(-90deg);
+  }
+  .newSlider {
+  	padding-top: 40px;
+  }
+  .item {
+  	float: left;
+  	margin-right: 15px;
+  	overflow: hidden;
+  	@include border-radius(10px);
+  	background-color: #fff;
+  	width: 220px;
+  	height: 260px;
+  	text-align: left;
+  	text-indent: 18px;
+  }
+  .itemImage {
+  	text-indent: 0;
+  }
+  .itemName {
+  	color: #005765;
+	font-family: PTSans;
+	font-size: 20px;
+	font-weight: 700;
+  }
+  .itemImage:hover {
+  	@include opacity(0.5);
+  	span {
+  		display: block;
+  		cursor: pointer;
+  	}
+  }
+  .itemImage-text {
+	display: none;
+    margin-top: -76px;
+    width: 100px;
+    height: 70px;
+    z-index: 5;
+    position: relative;
+    float: right;
+  }
+  .itemDescription {
+  	padding-top: 10px;
+  	color: #4c4e4e;
+	font-family: PTSans;
+	font-size: 14px;
+	font-weight: 700;
+  }
+  .itemPrice {
+  	overflow: hidden;
+  	line-height: 50px;
+  	font-weight: 700;
+  	height: 50px;
+  	color: #0db3c0;
+	font-family: PTSans;
+	font-size: 21px;
+	i {
+		margin-left: -22px;
+	}
+	.itemPrice-icon {
+		border: 2px solid;
+	    width: 73px;
+	    height: 85px;
+	    float: right;
+	    line-height: 50px;
+	    @include border-radius(49px);
+	    margin-right: -25px;
+	}
+	.itemPrice-icon:hover {
+		background: #cee0e4;
+		cursor: pointer;
+		i {
+			color: #fff;
+		}
+	}
+  }
+  .catalog-list:hover .subcatalog{  
+  	display: block;
+  }
+  .catalog-list {
+  	width: 183px;
+  	text-align: center;
+	a {
+		display: block;
+		height: 100%;
+		color: #ca3f73;
+		font-family: OpenSans;
+		font-size: 18px;			
+	}
+  }
+  .subcatalog-list {
+  	text-align: center;
+  	line-height: 38px;
+  	width: 180px;
+	height: 38px;
+	background-color: #fff;
+	border: 2px solid #ffe8f1;
+	a {
+	  	color: #555;
+		font-family: OpenSans;
+		font-size: 16px;
+	}
+  }
+  .subcatalog-list:hover{
+  	background-color: #ffe8f1;
+  }
+  .subcatalog-list:hover a {
+  	color: #ca3f72;
+  }
+  .subcatalog-list:nth-child(2n) {
+       border-top:none; 
+       border-bottom: none;
+    }
+  /* hide sub menu links */
+  .subcatalog {
+  	display: none;
+  }
+}
